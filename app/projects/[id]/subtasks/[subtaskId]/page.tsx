@@ -10,7 +10,7 @@ import {
 export default async function SubtaskPage({
   params,
 }: {
-  params: { id: string; subtaskId: string };
+  params: Promise<{ id: string; subtaskId: string }>;
 }) {
   const resolvedParams = await params;
   const [project, subtask] = await Promise.all([

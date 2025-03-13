@@ -6,7 +6,7 @@ import { getProjectById, getSubtasksByProjectId } from "@/lib/actions";
 export default async function ProjectPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string; subtaskId: string }>;
 }) {
   const resolvedParams = await params;
   const project = await getProjectById(resolvedParams.id);
